@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  height: 100vh;
+  background-color: mediumaquamarine;
+  align-items: flex-start;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+body, button, input[type=text] {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  display: flex;
+  justify-content: center;
+}
+button {
+  align-items: center;
+}
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 4em;
+}
+img {
+  border-width: 6px;
+  border-style: solid;
+  border-radius: 10px;
+  max-width: 100%;
+}
+img.gatete {
+  border-color: orange;
+}
+img.perrete {
+  border-color: crimson;
+}
+button {
+  border: none;
+  background-color: orangered;
+  background-color: #7551e9;
+  color: #fff;
+  padding: 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  width: 33%;
+  position: relative;
+}
+button:focus {
+  outline: none;
+}
+button.set-gatete, button.set-perrete {
+  font-size: 1.8em;
+}
+button.activo:after {
+  content: "";
+  height: 6px;
+  background-color: #2a1ed2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+main {
+  max-width: 412px;
+  width: 100%;
+}
+.controles {
+  display: flex;
+  justify-content: space-between;
+}
+.explicacion {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+.imagenes {
+  position: relative;
+}
+.imagenes:hover .editar-bicho {
+  opacity: 1;
+}
+.editar-bicho {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 1.4em;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #000;
+  opacity: 0;
+  transition: all 0.2s;
+}
+.bicho-favorito {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 2em;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #000;
+  font-style: normal;
+  display: none;
+}
+.imagenes img.favorito ~ .bicho-favorito {
+  display: block;
+}
+.formulario-editar {
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #fff;
+  transition: all 0.2s;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formulario-editar.on {
+  top: 0;
+}
+.formulario-editar form {
+  width: 50%;
+}
+.formulario-editar label, .formulario-editar input[type=text] {
+  display: block;
+}
+.formulario-editar input[type=text] {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px 0;
+  padding: 0 5px;
+}
+.formulario-editar button {
+  margin-top: 20px;
+}
+.formulario-editar .cerrar-form {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.4em;
+  text-decoration: none;
 }

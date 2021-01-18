@@ -1,5 +1,5 @@
 export const Boton = (props) => {
     return (
-        <button {...props}>{props.texto}</button>
+        <button {...props}>{props.children}</button>
     )
 }

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const Imagen = ({ alias, texto, favorito, abrirForm }) => {
     return (
         <section className="imagenes">
@@ -6,4 +8,11 @@ export const Imagen = ({ alias, texto, favorito, abrirForm }) => {
             <i className="bicho-favorito">👑</i>
         </section>
     )
+}
+
+Imagen.propTypes = {
+    alias: PropTypes.string.isRequired,
+    texto: PropTypes.string.isRequired,
+    favorito: PropTypes.bool.isRequired,
+    abrirForm: PropTypes.func.isRequired
 }
